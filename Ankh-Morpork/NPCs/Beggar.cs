@@ -31,21 +31,17 @@ namespace Ankh_Morpork.NPCs
         public void Appear()
         {
             var amount = (double)BeggarType == 0 ? 0 : (double)BeggarType / 100;
+            Console.Write($"You meet: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(Role);
+            Console.ResetColor();
             if (amount != 0)
             {
-                Console.Write($"You meet: ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Role);
-                Console.ResetColor();
                 Console.WriteLine($"He wants: {amount}$.");
 
             }
             else
             {
-                Console.Write($"You meet: ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Role);
-                Console.ResetColor();
                 Console.WriteLine("He wants Beer.");
             }
 

@@ -12,15 +12,18 @@ namespace Ankh_Morpork.Core
 {
     public class Game
     {
+        private Tutorial tutorial;
+        private Player player;
+        private Random rnd;
         public Game() { }
 
         public void StartNew()
         {
-            Tutorial tutorial = new Tutorial();
+             tutorial = new Tutorial();
 
-            Player player = new Player();
+             player = new Player();
 
-            Random rnd = new Random();
+             rnd = new Random();
 
             int luckyDayMoney = 0;
 
