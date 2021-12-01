@@ -20,7 +20,7 @@ namespace Ankh_Morpork
 
         public Player() { this.Alive = true; }
 
-        public void Killed()
+        public void Killed() //**
         {
             this.Alive = false;
         }
@@ -32,7 +32,7 @@ namespace Ankh_Morpork
             Console.ResetColor();
         }
 
-        public void AddMoney(double money)
+        public void AddMoney(double money) //**
         {
             if (money < 0)
                 throw new ArgumentException("Money can't be less than 0");
@@ -42,7 +42,7 @@ namespace Ankh_Morpork
             this.Money += money;
         }
 
-        public bool GetMoney(double money)
+        public bool GetMoney(double money) //**
         {
             if (money < 0)
                 throw new ArgumentException("Money can't be less than 0");
