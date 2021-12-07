@@ -25,9 +25,7 @@ namespace Ankh_Morpork.Core
 
              rnd = new Random();
 
-            int luckyDayMoney = 0;
-
-            IGuild guild;
+             IGuild guild;
 
             tutorial.Weclome();
 
@@ -38,7 +36,7 @@ namespace Ankh_Morpork.Core
                 guild = GetGuid();
                 if (guild == null)
                 {
-                    luckyDayMoney = rnd.Next(1, 6);
+                    int luckyDayMoney = rnd.Next(1, 6);
                     player.AddMoney(luckyDayMoney);
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"Today is your lucky day! You found {luckyDayMoney}$");
@@ -47,10 +45,8 @@ namespace Ankh_Morpork.Core
                 }
                 else
                 {
-                    //guild.MeetGuildMember();
                     if (MeetingResult.Inputter(guild.AmountOfMoneyForGuildMember,player,guild))
                     {
-                        //guild.UpdateMembersStatus();
                         player.ShowBalnace();
                     }
                     else
@@ -73,7 +69,6 @@ namespace Ankh_Morpork.Core
 
         private IGuild GetGuid()
         {
-            Random rnd = new Random();
             switch (rnd.Next(1, 5))
             {
                 case 1:
