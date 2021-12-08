@@ -61,7 +61,7 @@ namespace Ankh_Morpork.Guild
         {
             if (reward <= 0)
                 throw new ArgumentException();
-            var temp = assassins.FirstOrDefault(a=>a.YaZanyat != true 
+            var temp = assassins.FirstOrDefault(a=>a.IsOcupied != true 
                                                    && (a.LowestReward <= reward && reward <= a.HighestReward));
             if (temp is null)
                 return false;

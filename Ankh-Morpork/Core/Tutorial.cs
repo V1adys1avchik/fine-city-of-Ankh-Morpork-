@@ -11,15 +11,15 @@ namespace Ankh_Morpork.Core
     {
         public void Weclome()
         {
-            var path = @"..\..\..\Resources\Welcome.txt";
-
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.Write($"{Environment.UserName} ");
 
             Console.ResetColor();
 
-            ReadALLText(path);
+            var strWelcome = Properties.Resources.Welcome;
+
+            Console.WriteLine(strWelcome);
 
             Console.WriteLine("\nPress any key to continue...");
 
@@ -30,32 +30,21 @@ namespace Ankh_Morpork.Core
 
         public void Rules()
         {
-            var path = @"..\..\..\Resources\Rules.txt";
-
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("\t\tRules");
 
             Console.ResetColor();
 
-            var str = File.ReadAllLines(path);
+            var strRules = Properties.Resources.Rules;
 
-            ReadALLText(path);
+            Console.WriteLine(strRules);
 
             Console.WriteLine("\nPress any key to continue...");
 
             Console.ReadKey();
 
             Console.Clear();
-        }
-        private void ReadALLText(string path)
-        {
-            var str = File.ReadAllLines(path);
-            foreach (var line in str)
-            {
-                Console.WriteLine(line);
-
-            }
         }
     }
 }

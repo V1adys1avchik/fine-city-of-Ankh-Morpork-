@@ -11,18 +11,18 @@ namespace Ankh_Morpork.NPCs
         public Roles Role { get; private set; }
         public int HighestReward { get; set; }
         public int LowestReward { get; set; }
-        public bool YaZanyat { get; set; }  // Переименовать potom
+        public bool IsOcupied { get; set; }  // Переименовать potom
 
         public Assassin(Roles role)
         {
             this.Role = role;
             SetRange();
-            YaZanyat = false;
+            IsOcupied = false;
         }
         public Assassin()
         {
             SetRange();
-            YaZanyat = false;
+            IsOcupied = false;
         }
 
         void SetRange()
@@ -34,14 +34,14 @@ namespace Ankh_Morpork.NPCs
 
         public void GetWork()
         {
-            this.YaZanyat = true;
+            this.IsOcupied = true;
         }
         public void UpdateStatus()
         {
             var rnd = new Random();
             SetRange();
 
-            YaZanyat = rnd.Next(0, 2) == 0 ? false : true;
+            IsOcupied = rnd.Next(0, 2) == 0 ? false : true;
         }
 
         public double AvrgPrise()

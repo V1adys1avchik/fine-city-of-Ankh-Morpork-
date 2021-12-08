@@ -11,7 +11,6 @@ namespace Ankh_Morpork
         static void Main(string[] args)
         {
             Game game = new Game();
-
             game.StartNew();
         }
     }
